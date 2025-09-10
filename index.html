@@ -39,7 +39,7 @@
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#team">Team</a></li>
+            <!-- <li><a href="#team">Team</a></li> -->
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#faqs">Faq’s</a></li>
           </ul>
@@ -123,16 +123,283 @@
     </div>
   </div>
   <img alt="shaps" class="shaps" src="assets/img/footer-shaps.png">
-</section>
-<!-- heading -->
-<section id="about" class="gap">
+ </section>
+ 
+ <!-- Pricing Section moved here -->
+ <section id="pricing" class="gap pricing-plan">
+   <div class="container">
+       <div class="heading heading-center">
+         <span>Plans and Pricing</span>
+         <h2>Best Possible Rates No Credit Card Required</h2>
+       </div>
+     <div class="row">
+       <div class="col-lg-4 col-md-6">
+         <div class="pricing-plan-style" onclick="openPricingModal('standard')">
+           <div class="pricing-pr">
+             <span class="plan-badge">Standard Plan</span>
+             <i><img alt="plan" src="assets/img/plan.png"></i>
+             <div class="pricing-details">
+               <div class="strikethrough-price">₹10,000</div>
+               <h4>₹7,999<br><span>(+18% GST ₹1440)</span></h4>
+             </div>
+           </div>
+           <ul>
+             <li>
+               <div class="bolo"></div>
+               5 pages website
+             </li>
+             <li>
+               <div class="bolo"></div>
+               1 Year Free Domain & Hosting
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Premium Design & Admin Access
+             </li>
+             <li>
+               <div class="bolo"></div>
+               SEO Friendly & Responsive
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Payment Gateway Integration
+             </li>
+             <li>
+               <div class="bolo"></div>
+               <strong>+ 13 More Features</strong>
+             </li>
+           </ul>
+           <a href="#" class="btn">Call Now</a>
+         </div>
+       </div>
+       <div class="col-lg-4 col-md-6">
+         <div class="pricing-plan-style most-popular" onclick="openPricingModal('premium')">
+           <div class="most-popular-badge">Most Popular</div>
+           <div class="pricing-pr two">
+             <span class="plan-badge">Premium Plan</span>
+             <i><img alt="plan" src="assets/img/plan.png"></i>
+             <div class="pricing-details">
+               <div class="strikethrough-price">₹20,000</div>
+               <h4>₹13,999<br><span>(+18% GST ₹2520)</span></h4>
+             </div>
+           </div>
+           <ul>
+             <li>
+               <div class="bolo"></div>
+               12 pages Website
+             </li>
+             <li>
+               <div class="bolo"></div>
+               1 Year Free Domain & Hosting
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Google Search Console Setup
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Woocommerce Features
+             </li>
+             <li>
+               <div class="bolo"></div>
+               10 Free Email ID
+             </li>
+             <li>
+               <div class="bolo"></div>
+               <strong>+ 15 More Features</strong>
+             </li>
+           </ul>
+           <a href="#" class="btn">Call Now</a>
+         </div>
+       </div>
+       <div class="col-lg-4 col-md-6">
+         <div class="pricing-plan-style mb-0" onclick="openPricingModal('custom')">
+           <div class="pricing-pr three">
+             <span class="plan-badge">Custom Plan</span>
+             <i><img alt="plan" src="assets/img/plan.png"></i>
+             <div class="pricing-details">
+               <h4>₹????<br><span>(+18% GST Applicable)</span></h4>
+             </div>
+           </div>
+           <ul>
+             <li>
+               <div class="bolo"></div>
+               Custom Pages as Required
+             </li>
+             <li>
+               <div class="bolo"></div>
+               1 Year Free Domain & Hosting
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Google Search Console Setup
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Woocommerce Features
+             </li>
+             <li>
+               <div class="bolo"></div>
+               10 Free Email ID
+             </li>
+             <li>
+               <div class="bolo"></div>
+               <strong>+ 16 More Features</strong>
+             </li>
+           </ul>
+           <a href="#" class="btn">Call Now</a>
+         </div>
+       </div>
+     </div>
+     
+     <!-- E-commerce Plans Row -->
+     <div class="row" style="margin-top: 60px;">
+       <div class="col-lg-4 col-md-6">
+         <div class="pricing-plan-style" onclick="openPricingModal('ecommerce-premium')">
+           <div class="pricing-pr">
+             <span class="plan-badge">Premium Design E-commerce Plan</span>
+             <i><img alt="plan" src="assets/img/plan.png"></i>
+             <div class="pricing-details">
+               <div class="strikethrough-price">₹30,000</div>
+               <h4>₹24,999<br><span>(+18% GST APPLICABLE)</span></h4>
+             </div>
+           </div>
+           <ul>
+             <li>
+               <div class="bolo"></div>
+               30 pages website
+             </li>
+             <li>
+               <div class="bolo"></div>
+               1 Year Free Domain & Hosting
+             </li>
+             <li>
+               <div class="bolo"></div>
+               30 Product Categories
+             </li>
+             <li>
+               <div class="bolo"></div>
+               E-commerce Features
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Product Variation Features
+             </li>
+             <li>
+               <div class="bolo"></div>
+               <strong>+ 20 More Features</strong>
+             </li>
+           </ul>
+           <a href="#" class="btn">Call Now</a>
+         </div>
+       </div>
+       <div class="col-lg-4 col-md-6">
+         <div class="pricing-plan-style most-popular" onclick="openPricingModal('ecommerce-multivendor')">
+           <div class="most-popular-badge">Most Popular</div>
+           <div class="pricing-pr two">
+             <span class="plan-badge">Multi-vendor Business E-commerce Plan</span>
+             <i><img alt="plan" src="assets/img/plan.png"></i>
+             <div class="pricing-details">
+               <div class="strikethrough-price">₹80,000</div>
+               <h4>₹50,000<br><span>(+18% GST APPLICABLE)</span></h4>
+             </div>
+           </div>
+           <ul>
+             <li>
+               <div class="bolo"></div>
+               50 pages Website
+             </li>
+             <li>
+               <div class="bolo"></div>
+               1 Year Free Domain & Hosting
+             </li>
+             <li>
+               <div class="bolo"></div>
+               50 Product Categories
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Dynamic Multi Vendor Website
+             </li>
+             <li>
+               <div class="bolo"></div>
+               20 Free Email ID
+             </li>
+             <li>
+               <div class="bolo"></div>
+               <strong>+ 22 More Features</strong>
+             </li>
+           </ul>
+           <a href="#" class="btn">Call Now</a>
+         </div>
+       </div>
+       <div class="col-lg-4 col-md-6">
+         <div class="pricing-plan-style mb-0" onclick="openPricingModal('ecommerce-custom')">
+           <div class="pricing-pr three">
+             <span class="plan-badge">Custom Multi-vendor Business & E-commerce Plan</span>
+             <i><img alt="plan" src="assets/img/plan.png"></i>
+             <div class="pricing-details">
+               <h4>₹????<br><span>(+18% GST Applicable)</span></h4>
+             </div>
+           </div>
+           <ul>
+             <li>
+               <div class="bolo"></div>
+               Pages: According to Requirements
+             </li>
+             <li>
+               <div class="bolo"></div>
+               1 Year Free Domain & Hosting
+             </li>
+             <li>
+               <div class="bolo"></div>
+               77 Product Categories
+             </li>
+             <li>
+               <div class="bolo"></div>
+               Dynamic Multi Vendor Website
+             </li>
+             <li>
+               <div class="bolo"></div>
+               20 Free Email ID
+             </li>
+             <li>
+               <div class="bolo"></div>
+               <strong>+ 23 More Features</strong>
+             </li>
+           </ul>
+           <a href="#" class="btn">Call Now</a>
+         </div>
+       </div>
+     </div>
+     
+     <div class="row gap no-bottom align-items-center">
+       <div class="col-lg-5">
+          <div class="join-now">
+            <img src="assets/image/6.png" alt="join-now">
+          </div>
+       </div>
+       <div class="col-lg-7">
+         <div class="join-now-text">
+           <img alt="shaps" class="shaps" src="assets/img/shaps.png">
+           <h3>Don't Miss Out – Limited Time Offer <span>15% Discount</span></h3>
+           <h6>Your Business Deserves a Website That Converts</h6>
+           <a href="#" class="btn">Claim This Offer</a>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- heading -->
+ <section id="about" class="gap">
   <div class="container">
     <div class="row align-items-center">
      <div class="col-lg-6">
        <div class="heading">
         <span>WELCOME TO WEB SOLUTIONS</span>
         <h2>We Build Websites That Grow Your Business</h2>
-        <img alt="consulting" src="https://placehold.co/575x528">
+         <img alt="consulting" src="assets/image/1.png">
       </div>
      </div> 
      <div class="col-lg-6">
@@ -177,30 +444,30 @@
       </div>
     <div class="consulting-business">
       <div class="consulting-business-text"> 
-        <div class="consulting-business-img">
-            <img alt="consulting-business" src="https://placehold.co/138x134">
-            <span>1</span>
-        </div>
+         <div class="consulting-business-img">
+             <img alt="consulting-business" src="assets/image/2.png">
+             <span>1</span>
+         </div>
         <h5>Discover Needs & Goals
 </h5>
         <p>Quick deployment with ongoing assistance.
 </p>
       </div>
       <div class="consulting-business-text"> 
-        <div class="consulting-business-img">
-            <img alt="consulting-business" src="https://placehold.co/138x134">
-            <span>2</span>
-        </div>
+         <div class="consulting-business-img">
+             <img alt="consulting-business" src="assets/image/3.png">
+             <span>2</span>
+         </div>
         <h5> Design & Build Fast
  </h5>
         <p>Modern, responsive, and conversion-focused development.
 </p>
       </div>
       <div class="consulting-business-text mb-0"> 
-        <div class="consulting-business-img">
-            <img alt="consulting-business" src="https://placehold.co/138x134">
-            <span>3</span>
-        </div>
+         <div class="consulting-business-img">
+             <img alt="consulting-business" src="assets/image/4.png">
+             <span>3</span>
+         </div>
         <h5>Launch & Support
 </h5>
         <p>Quick deployment with ongoing assistance.
@@ -231,9 +498,9 @@
         </div>
       </div>
       <div class="col-lg-4">
-        <div class="service-img">
-          <img alt="service" src="https://placehold.co/416x520">
-        </div>
+         <div class="service-img">
+           <img alt="service" src="assets/image/5.png">
+         </div>
       </div>
       <div class="col-lg-4">
         <div class="service-text three">
@@ -276,375 +543,130 @@
     </div>
   </div>
 </section>
-<section id="pricing" class="gap pricing-plan">
-  <div class="container">
-      <div class="heading heading-center">
-        <span>Plans and Pricing</span>
-        <h2>Best Possible Rates No Credit Card Required</h2>
-      </div>
-    <div class="row">
-      <div class="col-lg-4 col-md-6">
-        <div class="pricing-plan-style">
-          <div class="pricing-pr">
-            <span class="plan-badge">Standard Plan</span>
-            <i><img alt="plan" src="assets/img/plan.png"></i>
-            <div class="pricing-details">
-              <div class="strikethrough-price">₹10,000</div>
-              <h4>₹7,999<br><span>(+18% GST ₹1440)</span></h4>
-            </div>
-          </div>
-          <ul>
-            <li>
-              <div class="bolo"></div>
-              5 pages website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year Free Domain Name (.com .in .org)
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year Free Cloud Hosting
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Dynamic Website (Premium Design)
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Admin Access
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Lifetime 24/7 Free Hosting Support
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Unlimited Images & Videos Upload
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Free SSL Certificates
-            </li>
-            <li>
-              <div class="bolo"></div>
-              5 Free Email ID
-            </li>
-            <li>
-              <div class="bolo"></div>
-              SEO Friendly Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              100% Responsive Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Live Chat Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Payment Gateway Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Social Media Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Call Button Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              WhatsApp Button Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Inquiry Form
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year Free Technical Support For Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Annual Renewal For Hosting Rs.4000
-            </li>
-          </ul>
-          <a href="#" class="btn">Call Now</a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="pricing-plan-style most-popular">
-          <div class="most-popular-badge">Most Popular</div>
-          <div class="pricing-pr two">
-            <span class="plan-badge">Premium Plan</span>
-            <i><img alt="plan" src="assets/img/plan.png"></i>
-            <div class="pricing-details">
-              <div class="strikethrough-price">₹20,000</div>
-              <h4>₹13,999<br><span>(+18% GST ₹2520)</span></h4>
-            </div>
-          </div>
-          <ul>
-            <li>
-              <div class="bolo"></div>
-              12 pages Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year Free Domain Name (.com .in .org)
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year Free Cloud Hosting
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Dynamic Website (Premium Design)
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Admin Access
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Google Search Console Setup
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Lifetime 24/7 Free Hosting Support
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Unlimited Images & Videos Upload
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Free SSL Certificates
-            </li>
-            <li>
-              <div class="bolo"></div>
-              10 Free Email ID
-            </li>
-            <li>
-              <div class="bolo"></div>
-              SEO Friendly Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              100% Responsive Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Live Chat Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Payment Gateway Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Social Media Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Call Button Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              WhatsApp Button Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Inquiry Form
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Woocommerce Features
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year Free Technical Support For Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Annual Renewal For Hosting Rs.6000
-            </li>
-          </ul>
-          <a href="#" class="btn">Call Now</a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="pricing-plan-style mb-0">
-          <div class="pricing-pr three">
-            <span class="plan-badge">Custom Plan</span>
-            <i><img alt="plan" src="assets/img/plan.png"></i>
-            <div class="pricing-details">
-              <h4>₹????<br><span>(+18% GST Applicable)</span></h4>
-            </div>
-          </div>
-          <ul>
-            <li>
-              <div class="bolo"></div>
-              Pages: According to Requirement
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year Free Domain Name (.com .in .org)
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year Free Cloud Hosting
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Dynamic Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Admin Access
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Google Search Console Setup
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Lifetime 24/7 Free Hosting Support
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Unlimited Images & Videos Upload
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Free SSL Certificates
-            </li>
-            <li>
-              <div class="bolo"></div>
-              10 Free Email ID
-            </li>
-            <li>
-              <div class="bolo"></div>
-              SEO Friendly Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              100% Responsive Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Live Chat Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Payment Gateway Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Social Media Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Call Button Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              WhatsApp Button Integration
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Inquiry Form
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Woocommerce Features
-            </li>
-            <li>
-              <div class="bolo"></div>
-              1 Year 24/7 Free Support For Website
-            </li>
-            <li>
-              <div class="bolo"></div>
-              Annual Renewal Rs.8000
-            </li>
-          </ul>
-          <a href="#" class="btn">Call Now</a>
-        </div>
-      </div>
+
+<!-- Pricing Modal -->
+<div id="pricingModal" class="pricing-modal">
+  <div class="pricing-modal-content">
+    <div class="pricing-modal-header">
+      <h3 id="modalTitle">Standard Plan</h3>
+      <span class="pricing-modal-close" onclick="closePricingModal()">&times;</span>
     </div>
-    <div class="row gap no-bottom align-items-center">
-      <div class="col-lg-5">
-        <div class="join-now">
-          <img src="https://placehold.co/526x435" alt="join-now">
-        </div>
+    <div class="pricing-modal-body">
+      <div class="pricing-details">
+        <div class="strikethrough-price" id="modalStrikethrough">₹10,000</div>
+        <h4 id="modalPrice">₹7,999<span>(+18% GST ₹1440)</span></h4>
       </div>
-      <div class="col-lg-7">
-        <div class="join-now-text">
-          <img alt="shaps" class="shaps" src="assets/img/shaps.png">
-          <h3>Don’t Miss Out – Limited Time Offer <span>15% Discount</span></h3>
-          <h6>Your Business Deserves a Website That Converts</h6>
-          <a href="#" class="btn">Claim This Offer</a>
-        </div>
-      </div>
+      <ul id="modalFeatures">
+        <!-- Features will be populated by JavaScript -->
+      </ul>
+      <a href="#" class="btn" style="margin-top: 20px;">Call Now</a>
     </div>
   </div>
-</section>
-<section id="faqs" class="questions gap">
+</div>
+
+ <section id="faqs" class="questions gap">
   <div class="container">
       <div class="heading heading-center">
         <span>frequently asked questions</span>
         <h2>Find Answers to Your Questions Instantly</h2>
       </div>
-    <div class="accordion">
-        <div class="accordion-item">
-                    <a href="#" class="heading">
-                        <div class="icon"></div>
-                        <div class="title">What is a landing page in Unbounce?</div>
-                    </a>
+     <div class="accordion">
+         <div class="accordion-item">
+                     <a href="#" class="heading">
+                         <div class="icon"></div>
+                         <div class="title">What's included in your website development packages?</div>
+                     </a>
 
-                    <div class="content">
-                        <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                        </p>
-                    </div>
-        </div>
+                     <div class="content">
+                         <p>Our packages include custom design, responsive development, domain registration, hosting, SSL certificates, admin panel, SEO optimization, and ongoing support. Each plan offers different features - from basic 5-page websites to advanced e-commerce solutions with multi-vendor capabilities.
+                         </p>
+                     </div>
+         </div>
 
-        <div class="accordion-item active">
-                    <a href="#" class="heading" >
-                        <div class="icon"></div>
-                        <div class="title">How do I publish an Unbounce landing page?</div>
-                    </a>
+         <div class="accordion-item active">
+                     <a href="#" class="heading" >
+                         <div class="icon"></div>
+                         <div class="title">How long does it take to build my website?</div>
+                     </a>
 
-                    <div class="content" style="display: block;">
-                        <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                        </p>
-                    </div>
-        </div>
+                     <div class="content" style="display: block;">
+                         <p>Standard websites (5-12 pages) typically take 2-3 weeks, while e-commerce websites may take 4-6 weeks depending on complexity. Custom multi-vendor platforms can take 6-8 weeks. We provide regular updates throughout the development process and can expedite delivery for urgent projects.
+                         </p>
+                     </div>
+         </div>
 
-        <div class="accordion-item">
-                    <a href="#" class="heading">
-                        <div class="icon"></div>
-                        <div class="title">How do I make my Unbounce page responsive?</div>
-                    </a>
+         <div class="accordion-item">
+                     <a href="#" class="heading">
+                         <div class="icon"></div>
+                         <div class="title">Do you provide ongoing support after website launch?</div>
+                     </a>
 
-                    <div class="content">
-                        <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                        </p>
-                    </div>
-        </div>
+                     <div class="content">
+                         <p>Yes! We offer lifetime 24/7 hosting support and 1 year of free technical support for all websites. This includes updates, security patches, performance optimization, and any technical issues. Our support team is always available to help keep your website running smoothly.
+                         </p>
+                     </div>
+         </div>
 
-        <div class="accordion-item">
-                    <a href="#" class="heading">
-                        <div class="icon"></div>
-                        <div class="title">Why use Unbounce landing pages?</div>
-                    </a>
+         <div class="accordion-item">
+                     <a href="#" class="heading">
+                         <div class="icon"></div>
+                         <div class="title">What's the difference between your e-commerce plans?</div>
+                     </a>
 
-                    <div class="content">
-                        <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                        </p>
-                    </div>
-        </div>
-        <img alt="accordion" src="https://placehold.co/1062x536">
+                     <div class="content">
+                         <p>Our Premium E-commerce Plan (₹24,999) includes 30 pages and basic e-commerce features. The Multi-vendor Plan (₹50,000) offers 50 pages with advanced multi-vendor capabilities. The Custom Plan provides unlimited pages and features tailored to your specific business requirements.
+                         </p>
+                     </div>
+         </div>
+
+         <div class="accordion-item">
+                     <a href="#" class="heading">
+                         <div class="icon"></div>
+                         <div class="title">Is my website mobile-friendly and SEO optimized?</div>
+                     </a>
+
+                     <div class="content">
+                         <p>Absolutely! All our websites are 100% responsive and mobile-friendly. We also include SEO optimization, Google Search Console setup, and ensure your site follows best practices for search engine visibility. This helps your website rank better on Google and provides a great user experience on all devices.
+                         </p>
+                     </div>
+         </div>
+
+         <div class="accordion-item">
+                     <a href="#" class="heading">
+                         <div class="icon"></div>
+                         <div class="title">What payment methods do you accept?</div>
+                     </a>
+
+                     <div class="content">
+                         <p>We accept all major payment methods including bank transfers, UPI, credit/debit cards, and digital wallets. We also offer flexible payment plans - you can pay 50% upfront and 50% upon completion. All prices include 18% GST as applicable.
+                         </p>
+                     </div>
+         </div>
+
+         <div class="accordion-item">
+                     <a href="#" class="heading">
+                         <div class="icon"></div>
+                         <div class="title">Can I manage my website content myself?</div>
+                     </a>
+
+                     <div class="content">
+                         <p>Yes! We provide full admin access to your website with an easy-to-use content management system. You can update text, images, products, and manage orders without any technical knowledge. We also provide training to help you get comfortable with managing your website.
+                         </p>
+                     </div>
+         </div>
+
+         <div class="accordion-item">
+                     <a href="#" class="heading">
+                         <div class="icon"></div>
+                         <div class="title">Do you offer custom features and integrations?</div>
+                     </a>
+
+                     <div class="content">
+                         <p>Yes! We can integrate payment gateways, live chat, WhatsApp buttons, social media feeds, analytics tools, and any other custom features your business needs. Our Custom Plan is specifically designed for unique requirements and can be tailored to your exact specifications.
+                         </p>
+                     </div>
+         </div>
+         <img alt="accordion" src="assets/image/7.png">
     </div>
   </div>
 </section>
@@ -690,8 +712,8 @@
           <img alt="Phone" src="assets/img/phan.png">
           <div>
             <h3>phone:</h3>
-            <p>Home:<a href="callto:02078717662">91 80060 05382</a></p>
-            <p>Office:<a href="callto:02078717662">91 80060 05382</a></p>
+            <p>Home:<a href="callto:02078717662">+91 80060 05382</a></p>
+            <p>Office:<a href="callto:02078717662">+91 80060 05382</a></p>
           </div>
         </div>
       </div>
@@ -721,7 +743,256 @@
 <!-- fancybox -->
 <script src="assets/js/jquery.fancybox.min.js"></script>
 <script src="assets/js/custom.js"></script>
-<!-- Email Js -->
-  <script src="assets/js/sweetalert.min.js"></script>
-  <script src="assets/js/contact.js"></script>
-</body>
+ <!-- Email Js -->
+   <script src="assets/js/sweetalert.min.js"></script>
+   <script src="assets/js/contact.js"></script>
+   
+   <!-- Pricing Modal JavaScript -->
+   <script>
+   // Pricing plans data
+   const pricingPlans = {
+     standard: {
+       title: "Standard Plan",
+       strikethrough: "₹10,000",
+       price: "₹7,999",
+       gst: "(+18% GST ₹1440)",
+       features: [
+         "5 pages website",
+         "1 Year Free Domain Name (.com .in .org)",
+         "1 Year Free Cloud Hosting",
+         "Dynamic Website (Premium Design)",
+         "Admin Access",
+         "Lifetime 24/7 Free Hosting Support",
+         "Unlimited Images & Videos Upload",
+         "Free SSL Certificates",
+         "5 Free Email ID",
+         "SEO Friendly Website",
+         "100% Responsive Website",
+         "Live Chat Integration",
+         "Payment Gateway Integration",
+         "Social Media Integration",
+         "Call Button Integration",
+         "WhatsApp Button Integration",
+         "Inquiry Form",
+         "1 Year Free Technical Support For Website",
+         "Annual Renewal For Hosting Rs.4000"
+       ]
+     },
+     premium: {
+       title: "Premium Plan",
+       strikethrough: "₹20,000",
+       price: "₹13,999",
+       gst: "(+18% GST ₹2520)",
+       features: [
+         "12 pages Website",
+         "1 Year Free Domain Name (.com .in .org)",
+         "1 Year Free Cloud Hosting",
+         "Dynamic Website (Premium Design)",
+         "Admin Access",
+         "Google Search Console Setup",
+         "Lifetime 24/7 Free Hosting Support",
+         "Unlimited Images & Videos Upload",
+         "Free SSL Certificates",
+         "10 Free Email ID",
+         "SEO Friendly Website",
+         "100% Responsive Website",
+         "Live Chat Integration",
+         "Payment Gateway Integration",
+         "Social Media Integration",
+         "Call Button Integration",
+         "WhatsApp Button Integration",
+         "Inquiry Form",
+         "Woocommerce Features",
+         "1 Year Free Technical Support For Website",
+         "Annual Renewal For Hosting Rs.6000"
+       ]
+     },
+     custom: {
+       title: "Custom Plan",
+       strikethrough: "",
+       price: "₹????",
+       gst: "(+18% GST Applicable)",
+       features: [
+         "Pages: According to Requirement",
+         "1 Year Free Domain Name (.com .in .org)",
+         "1 Year Free Cloud Hosting",
+         "Dynamic Website",
+         "Admin Access",
+         "Google Search Console Setup",
+         "Lifetime 24/7 Free Hosting Support",
+         "Unlimited Images & Videos Upload",
+         "Free SSL Certificates",
+         "10 Free Email ID",
+         "SEO Friendly Website",
+         "100% Responsive Website",
+         "Live Chat Integration",
+         "Payment Gateway Integration",
+         "Social Media Integration",
+         "Call Button Integration",
+         "WhatsApp Button Integration",
+         "Inquiry Form",
+         "Woocommerce Features",
+         "1 Year 24/7 Free Support For Website",
+         "Annual Renewal Rs.8000"
+       ]
+     },
+     "ecommerce-premium": {
+       title: "Premium Design E-commerce Plan",
+       strikethrough: "₹30,000",
+       price: "₹24,999",
+       gst: "(+18% GST APPLICABLE)",
+       features: [
+         "30 pages website",
+         "1 Year Free Domain Name (.com .in .org)",
+         "1 Year Free Cloud Hosting",
+         "30 Product Categories",
+         "30 Product Listing From Our Side",
+         "Premium Design",
+         "Dynamic Website",
+         "Admin Access",
+         "Google Search Console Setup",
+         "Lifetime 24/7 Free Hosting Support",
+         "Unlimited Images & Videos Upload",
+         "Free SSL Certificates",
+         "10 Free Email ID",
+         "SEO Friendly Website",
+         "100% Responsive Website",
+         "Live Chat Integration",
+         "Payment Gateway Integration",
+         "Social Media Integration",
+         "Call Button Integration",
+         "WhatsApp Button Integration",
+         "Inquiry Form",
+         "E-commerce Features",
+         "Product Variation Features",
+         "Auto Invoice & Bill Generator Features",
+         "Wallet System Features",
+         "Order Notification Features",
+         "OTP Verification Features",
+         "1 Year Free Technical Support For Website",
+         "Annual Renewal For Hosting Rs. 4000"
+       ]
+     },
+     "ecommerce-multivendor": {
+       title: "Multi-vendor Business E-commerce Plan",
+       strikethrough: "₹80,000",
+       price: "₹50,000",
+       gst: "(+18% GST APPLICABLE)",
+       features: [
+         "50 pages Website",
+         "1 Year Free Domain Name (.com .in .org)",
+         "1 Year Free Cloud Hosting",
+         "50 Products Categories",
+         "50 Products Listing from our side",
+         "Premium Design",
+         "Dynamic Website",
+         "Admin Access",
+         "Google Search Console Setup",
+         "Dynamic Multi Vendor Website",
+         "Lifetime 24/7 Free Hosting Support",
+         "Unlimited Images & Videos Upload",
+         "Free SSL Certificates",
+         "20 Free Email ID",
+         "SEO Friendly Website",
+         "100% Responsive Website",
+         "Live Chat Integration",
+         "Payment Gateway Integration",
+         "Social Media Integration",
+         "Call Button Integration",
+         "WhatsApp Button Integration",
+         "Inquiry Form",
+         "Multi Level E-commerce Features",
+         "Product Variation Features",
+         "Auto Invoice & Bill Generator Features",
+         "Wallet System Features",
+         "Order Notification Features",
+         "OTP Verification Features",
+         "1 Year Free Technical Support For Website",
+         "Annual Renewal For Hosting Rs. 5000"
+       ]
+     },
+     "ecommerce-custom": {
+       title: "Custom Multi-vendor Business & E-commerce Plan",
+       strikethrough: "₹???",
+       price: "₹????",
+       gst: "(+18% GST Applicable)",
+       features: [
+         "Pages: According to Requirements",
+         "1 Year Free Domain Name (.com .in .org)",
+         "1 Year Free Cloud Hosting",
+         "77 Products Categories",
+         "77 Products Listing from our side",
+         "Premium Design",
+         "Dynamic Website",
+         "Admin Access",
+         "Google Search Console Setup",
+         "Dynamic Multi Vendor Website",
+         "Lifetime 24/7 Free Hosting Support",
+         "Unlimited Images & Videos Upload",
+         "Free SSL Certificates",
+         "20 Free Email ID",
+         "SEO Friendly Website",
+         "100% Responsive Website",
+         "Live Chat Integration",
+         "Payment Gateway Integration",
+         "Social Media Integration",
+         "Call Button Integration",
+         "WhatsApp Button Integration",
+         "Inquiry Form",
+         "Multi Level E-commerce Features",
+         "Product Variation Features",
+         "Auto Invoice & Bill Generator Features",
+         "Wallet System Features",
+         "Order Notification Features",
+         "OTP Verification Features",
+         "1 Year Free Technical Support For Website",
+         "Annual Renewal For Hosting Rs. 6000"
+       ]
+     }
+   };
+
+   function openPricingModal(planType) {
+     const plan = pricingPlans[planType];
+     const modal = document.getElementById('pricingModal');
+     
+     // Update modal content
+     document.getElementById('modalTitle').textContent = plan.title;
+     document.getElementById('modalStrikethrough').textContent = plan.strikethrough;
+     document.getElementById('modalPrice').innerHTML = plan.price + '<span>' + plan.gst + '</span>';
+     
+     // Update features list
+     const featuresList = document.getElementById('modalFeatures');
+     featuresList.innerHTML = '';
+     plan.features.forEach(feature => {
+       const li = document.createElement('li');
+       li.innerHTML = '<div class="bolo"></div>' + feature;
+       featuresList.appendChild(li);
+     });
+     
+     // Show modal
+     modal.style.display = 'block';
+     document.body.style.overflow = 'hidden';
+   }
+
+   function closePricingModal() {
+     const modal = document.getElementById('pricingModal');
+     modal.style.display = 'none';
+     document.body.style.overflow = 'auto';
+   }
+
+   // Close modal when clicking outside of it
+   window.onclick = function(event) {
+     const modal = document.getElementById('pricingModal');
+     if (event.target == modal) {
+       closePricingModal();
+     }
+   }
+
+   // Close modal with Escape key
+   document.addEventListener('keydown', function(event) {
+     if (event.key === 'Escape') {
+       closePricingModal();
+     }
+   });
+   </script>
+ </body>

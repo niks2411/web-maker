@@ -907,18 +907,19 @@ a.brand i {
     background-color: white;
     border: 3px solid #000;
     border-radius: 20px;
-    padding-bottom: 40px;
-    width: 94%;
+    padding-bottom: 20px;
+    width: 100%;
     transition: .3s ease-in-out;
-    height: 100%;
+    height: auto;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     position: relative;
+    cursor: pointer;
 }
 .pricing-plan-style.most-popular {
-    transform: scale(1.05);
     border-color: #007bff;
-    box-shadow: 0 0 30px rgba(0,123,255,0.3);
+    box-shadow: 0 0 20px rgba(0,123,255,0.2);
 }
 .most-popular-badge {
     position: absolute;
@@ -955,8 +956,8 @@ a.brand i {
     margin-top: -2px;
 }
 .pricing-plan-style ul {
-    padding: 40px;
-    padding-bottom: 20px;
+    padding: 20px 30px;
+    padding-bottom: 15px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -966,6 +967,80 @@ a.brand i {
     margin: 0 auto;
     display: block;
     width: fit-content;
+}
+
+/* Pricing Modal Styles */
+.pricing-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+.pricing-modal-content {
+    background-color: white;
+    margin: 2% auto;
+    padding: 0;
+    border: 3px solid #000;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.pricing-modal-header {
+    background-color: #f2fcff;
+    padding: 20px 30px;
+    border-bottom: 3px solid #000;
+    border-radius: 17px 17px 0 0;
+    position: relative;
+}
+
+.pricing-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #ff5c5c;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.pricing-modal-close:hover {
+    background-color: #ff3333;
+    transform: scale(1.1);
+}
+
+.pricing-modal-body {
+    padding: 30px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 /* 13. join-now-text */
 .join-now img {
