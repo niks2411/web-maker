@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Submissions</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22d3ee;
+      --accent-2: #34d399;
+      --danger: #f87171;
+      --border: #1f2937;
+    }
+    body { background: var(--bg); color: var(--text); padding: 24px; }
+    h2 { font-weight: 700; letter-spacing: .3px; }
+    .card { background: linear-gradient(180deg, #0b1220, #0b1220), var(--card); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+    .toolbar { gap: 12px; }
+    .form-control, .form-select { background: #0b1220; color: var(--text); border-color: var(--border); }
+    .form-control::placeholder { color: var(--muted); }
+    .btn-accent { background: var(--accent); border: none; color: #062a2f; font-weight: 700; }
+    .btn-accent:hover { filter: brightness(.95); }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); }
+    .table { color: var(--text); }
+    .table thead th { color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    .table tbody tr:hover { background: #0c1526; }
+    .badge-pill { border-radius: 9999px; padding: 4px 10px; font-size: 12px; }
+    .type-pill { background: rgba(34,211,238,.12); color: var(--accent); border: 1px solid rgba(34,211,238,.25); }
+    .pill-ecom { background: rgba(52,211,153,.12); color: var(--accent-2); border: 1px solid rgba(52,211,153,.25); }
+    .footer-note { color: var(--muted); font-size: 12px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container-fluid p-0">
+    <h2 class="mb-3">Admin Panel</h2>
+
+    <div id="loginSection" class="card p-4 mb-4">
+      <h5 class="mb-3">Enter Admin Password</h5>
+      <form id="loginForm" class="row g-3">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <input type="password" id="adminPassword" class="form-control" placeholder="Enter admin password" required>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-accent">Enter</button>
+        </div>
+      </form>
+      <p class="footer-note mt-3">Tip: Change the hardcoded password in <code>admin.html</code> by editing <code>ADMIN_PASSWORD</code>.</p>
+    </div>
+
+    <div id="contentSection" class="hidden">
+      <div class="card p-3 mb-3">
+        <div class="d-flex flex-wrap align-items-center justify-content-between toolbar">
+          <div class="d-flex flex-wrap align-items-center toolbar">
+            <input id="searchInput" type="text" class="form-control" placeholder="Search by name, email, phone or type" style="min-width:280px">
+            <select id="typeFilter" class="form-select">
+              <option value="">All types</option>
+              <option value="Virtual">Landing Page</option>
+              <option value="In-Office">Website</option>
+              <option value="Ecommerce">E-commerce Store</option>
+            </select>
+            <button id="clearFilters" class="btn btn-outline">Clear</button>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button id="downloadCsv" class="btn btn-accent">Download CSV</button>
+            <button id="logoutBtn" class="btn btn-outline">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-0">
+        <div class="table-responsive">
+          <table id="submissionsTable" class="table table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th style="width: 180px;">Submitted At</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th style="width:160px;">Preferred Type</th>
+                <th style="width:260px;">Doc ID</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script>
+    (function(){
+      // CHANGE THIS PASSWORD
+      const ADMIN_PASSWORD = 'admin987';
+
+      const loginSection = document.getElementById('loginSection');
+      const contentSection = document.getElementById('contentSection');
+      const tbody = document.querySelector('#submissionsTable tbody');
+      const searchInput = document.getElementById('searchInput');
+      const typeFilter = document.getElementById('typeFilter');
+      const clearFiltersBtn = document.getElementById('clearFilters');
+      const downloadBtn = document.getElementById('downloadCsv');
+
+      let allDocs = []; // raw snapshot docs
+      let filteredRows = []; // rendered data objects
+      let unsubscribe = null;
+
+      function normalizeRow(doc){
+        const d = doc.data();
+        const created = d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null;
+        return {
+          id: doc.id,
+          createdAt: created,
+          createdAtStr: created ? created.toLocaleString() : '-',
+          name: d.name || '',
+          email: d.email || '',
+          phone: d.phone || '',
+          preferredType: d.preferredType || ''
+        };
+      }
+
+      function renderRows(rows){
+        tbody.innerHTML = '';
+        rows.forEach(function(r){
+          const tr = document.createElement('tr');
+          const typeClass = r.preferredType === 'Ecommerce' ? 'pill-ecom' : 'type-pill';
+          tr.innerHTML = `
+            <td>${r.createdAtStr}</td>
+            <td>${r.name}</td>
+            <td>${r.email}</td>
+            <td>${r.phone}</td>
+            <td><span class="badge-pill ${typeClass}">${r.preferredType || '-'}</span></td>
+            <td><small class="text-muted">${r.id}</small></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function applyFilters(){
+        const q = searchInput.value.trim().toLowerCase();
+        const type = typeFilter.value;
+        const rows = allDocs
+          .map(normalizeRow)
+          .filter(function(r){
+            const matchesType = !type || r.preferredType === type;
+            const hay = (r.name + ' ' + r.email + ' ' + r.phone + ' ' + r.preferredType + ' ' + r.id).toLowerCase();
+            const matchesText = !q || hay.includes(q);
+            return matchesType && matchesText;
+          });
+        filteredRows = rows;
+        renderRows(filteredRows);
+      }
+
+      function startListener(){
+        return window.db
+          .collection('submissions')
+          .orderBy('createdAt','desc')
+          .onSnapshot(function(snapshot){
+            allDocs = snapshot.docs;
+            applyFilters();
+          }, function(err){
+            alert('Failed to load submissions: ' + err.message);
+          });
+      }
+
+      function downloadCSV(){
+        if (!filteredRows.length) {
+          alert('No rows to export');
+          return;
+        }
+        const header = ['Submitted At','Name','Email','Phone','Preferred Type','Doc ID'];
+        const lines = [header.join(',')];
+        filteredRows.forEach(function(r){
+          const row = [
+            r.createdAtStr.replace(/,/g, ' '),
+            r.name.replace(/,/g, ' '),
+            r.email.replace(/,/g, ' '),
+            r.phone.replace(/,/g, ' '),
+            r.preferredType.replace(/,/g, ' '),
+            r.id
+          ];
+          lines.push(row.join(','));
+        });
+        const csv = lines.join('\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const date = new Date().toISOString().slice(0,19).replace(/[:T]/g,'-');
+        a.download = `submissions-${date}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      function enterAdmin(){
+        loginSection.classList.add('hidden');
+        contentSection.classList.remove('hidden');
+        if (unsubscribe) { unsubscribe(); }
+        unsubscribe = startListener();
+      }
+
+      // events
+      searchInput.addEventListener('input', applyFilters);
+      typeFilter.addEventListener('change', applyFilters);
+      clearFiltersBtn.addEventListener('click', function(){
+        searchInput.value = '';
+        typeFilter.value = '';
+        applyFilters();
+      });
+      downloadBtn.addEventListener('click', downloadCSV);
+
+      // Auto-enter if session present
+      if (sessionStorage.getItem('ADMIN_OK') === '1') {
+        enterAdmin();
+      }
+
+      document.getElementById('loginForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const pass = document.getElementById('adminPassword').value;
+        if (pass === ADMIN_PASSWORD) {
+          sessionStorage.setItem('ADMIN_OK','1');
+          enterAdmin();
+        } else {
+          alert('Incorrect password');
+        }
+      });
+
+      document.getElementById('logoutBtn').addEventListener('click', function(){
+        sessionStorage.removeItem('ADMIN_OK');
+        if (unsubscribe) { unsubscribe(); unsubscribe = null; }
+        tbody.innerHTML = '';
+        contentSection.classList.add('hidden');
+        loginSection.classList.remove('hidden');
+      });
+    })();
+  </script>
+</body>
+</html>
